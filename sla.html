@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SLA Disconnect Board — Lucas Signorini</title>
+<meta name="description" content="An electrical engineering internship project at Onward Robotics: a circuit board that disconnects a robot's backup batteries when it powers off, taken from a hand-soldered prototype to a production PCB." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body class="case">
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="index.html" id="brand" class="brand">Lucas Signorini</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#projects">projects</a>
+      <a href="index.html#experience">experience</a>
+      <a href="index.html#about">about</a>
+      <a href="index.html#contact">contact me</a>
+      <a href="assets/Lucas_Signorini_Resume.pdf" download class="btn-resume js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>resume</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="cs-head">
+    <a href="index.html#projects" class="back">← projects</a>
+    <h1>SLA Disconnect Board</h1>
+    <div class="sub">A small board that kept the robot's backup batteries from quietly dying.</div>
+  </div>
+
+  <div class="cs-grid">
+
+    <aside class="cs-rail">
+      <div class="cs-spec">
+        <div class="grp"><div class="k">role</div><div class="v">Electrical · PCB design</div></div>
+        <div class="grp"><div class="k">tools</div><div class="v">LTSpice · Altium</div></div>
+        <div class="grp"><div class="k">when</div><div class="v">2025 · Onward Robotics</div></div>
+        <div class="grp"><div class="k">context</div><div class="v">EE Internship</div></div>
+        <div class="grp"><div class="k">outcome</div><div class="v accent">Battery life ~1 month → ~1 year</div></div>
+        <div class="grp"><div class="k">tags</div><div class="v">hardware · PCB</div></div>
+      </div>
+    </aside>
+
+    <div class="cs-narrative">
+
+      <div class="cs-carousel" data-carousel>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="slide"><img src="assets/img/sla/protoboard.jpg" alt="The hand-soldered protoboard prototype" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/sla/v1.jpg" alt="The first Altium PCB layout, an angular shape" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/sla/v2.jpg" alt="The tightened production layout" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/sla/v3.jpg" alt="The final compact board footprint" loading="lazy"></div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+          <button class="carousel-btn next" aria-label="Next image">›</button>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
+
+      <h3>Context</h3>
+      <p>During my electrical engineering internship at Onward Robotics, one of the robots had a backup-battery problem. Its sealed lead-acid backup batteries were draining much faster than they should, and the frustrating part was that the circuit measuring the batteries was itself part of what kept draining them, even when the robot was switched off.</p>
+
+      <h3>Approach</h3>
+      <p>My fix was a circuit that fully disconnects the backup batteries whenever the robot is powered down, so nothing can quietly pull from them while it sits. I simulated it in LTSpice to check the idea held up, then built it for real.</p>
+
+      <h3>Build</h3>
+      <p>I started with a hand-soldered protoboard prototype, a bit of a mess of wires, and tested it until it worked. From there I drew up the schematic and laid out a proper PCB in Altium. The board had to fit a specific spot inside the robot, so it came out in an odd, angular shape rather than a tidy rectangle. That first board carried plenty of test points and room around the components to make debugging easy. Once it was proven, I moved to a production version that stripped the test points back out and tightened the spacing, shrinking the footprint until it mounted with two screws instead of three.</p>
+
+      <h3>Result</h3>
+      <p>The backup batteries went from lasting about a month to lasting about a year, and the design was handed off toward production. It was my first time taking a board all the way from a pile of wires to something a company would actually manufacture, and getting the finished PCB back in my hands was a great feeling.</p>
+
+      <div class="timeline" data-timeline>
+        <div class="lbl">how it came together</div>
+        <div class="ph-stepper">
+          <div class="ph-line"></div>
+          <div class="ph-nodes">
+            <button class="ph-node active" data-phase="0"><span class="ph-dot"></span><span class="ph-name">The problem</span><span class="ph-meta">draining</span></button>
+            <button class="ph-node" data-phase="1"><span class="ph-dot"></span><span class="ph-name">The prototype</span><span class="ph-meta">protoboard</span></button>
+            <button class="ph-node" data-phase="2"><span class="ph-dot"></span><span class="ph-name">Onto a PCB</span><span class="ph-meta">the odd shape</span></button>
+            <button class="ph-node" data-phase="3"><span class="ph-dot"></span><span class="ph-name">Production</span><span class="ph-meta">shrinking it</span></button>
+          </div>
+        </div>
+
+        <div class="ph-panels">
+          <div class="ph-panel" data-panel="0">
+            <div class="ph-panel-lbl">the problem</div>
+            <div class="ph-desc">The robot's sealed lead-acid backup batteries were draining far too fast, and the circuit meant to measure them was itself part of the drain, even with the robot switched off.</div>
+          </div>
+
+          <div class="ph-panel" data-panel="1" hidden>
+            <div class="ph-panel-lbl">the prototype</div>
+            <div class="ph-desc">A hand-soldered protoboard version to prove the disconnect idea worked before committing to a real board.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/sla/protoboard.jpg" alt="The protoboard prototype" loading="lazy"></div><div class="pcap">The protoboard prototype</div></div>
+            </div>
+          </div>
+
+          <div class="ph-panel" data-panel="2" hidden>
+            <div class="ph-panel-lbl">onto a pcb · the odd shape</div>
+            <div class="ph-desc">Schematic, then an Altium layout. It had to fit a specific spot inside the robot, so the outline came out angular instead of a clean rectangle. This first board kept plenty of test points and spacing to make debugging easy.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/sla/v1.jpg" alt="The first PCB layout" loading="lazy"></div><div class="pcap">The first board layout</div></div>
+            </div>
+          </div>
+
+          <div class="ph-panel" data-panel="3" hidden>
+            <div class="ph-panel-lbl">production · shrinking it</div>
+            <div class="ph-desc">The production version removed the test points and tightened the spacing, shrinking the board until it mounted with two screws instead of three.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/sla/v2.jpg" alt="The tightened layout" loading="lazy"></div><div class="pcap">Tightening the layout</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/sla/v3.jpg" alt="The final compact footprint" loading="lazy"></div><div class="pcap">The final, compact footprint</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="closing">
+    <div class="closing-top">
+      <div class="cta-eyebrow">get in touch</div>
+      <h2>Let's build something.</h2>
+      <p>If you're building something interesting, robotics, hardware, or otherwise, I'd love to hear about it. A role, a project, or just a hello all work.</p>
+      <div class="closing-links">
+        <a class="primary email-reveal" href="#" data-e="108,115,105,103,110,111,114,105,64,97,110,100,114,101,119,46,99,109,117,46,101,100,117"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> <span class="et">Email me</span></a>
+        <a href="https://linkedin.com/in/lucas-d-signorini/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg> LinkedIn</a>
+        <a href="assets/Lucas_Signorini_Resume.pdf" download class="js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg> Resume</a>
+      </div>
+    </div>
+    <div class="footer">
+      <span>© 2026 Lucas Signorini · Pittsburgh, PA</span>
+      <a href="index.html">← back to home</a>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

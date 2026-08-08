@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Custom RTOS to PID Car — Lucas Signorini</title>
+<meta name="description" content="A real-time operating system built from scratch in C, deployed to drive a car with PID control. CMU 18-349, Labs 0 through 5." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body class="case">
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="index.html" id="brand" class="brand">Lucas Signorini</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#projects">projects</a>
+      <a href="index.html#experience">experience</a>
+      <a href="index.html#about">about</a>
+      <a href="index.html#contact">contact me</a>
+      <a href="assets/Lucas_Signorini_Resume.pdf" download class="btn-resume js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>resume</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="cs-head">
+    <a href="index.html#projects" class="back">← projects</a>
+    <h1>Custom RTOS to PID Car</h1>
+    <div class="sub">A kernel from scratch, deployed to a moving car.</div>
+  </div>
+
+  <div class="cs-grid">
+
+    <aside class="cs-rail">
+      <div class="cs-spec">
+        <div class="grp"><div class="k">role</div><div class="v">Firmware · PCB</div></div>
+        <div class="grp"><div class="k">tools</div><div class="v">C · STM32 · Python</div></div>
+        <div class="grp"><div class="k">timeline</div><div class="v">Spring 2026</div></div>
+        <div class="grp"><div class="k">context</div><div class="v">Course · 18-349</div></div>
+        <div class="grp"><div class="k">built</div><div class="v">with a partner</div></div>
+        <div class="grp"><div class="k">outcome</div><div class="v accent">Passed the full test suite</div></div>
+        <div class="grp"><div class="k">tags</div><div class="v">embedded · controls</div></div>
+      </div>
+    </aside>
+
+    <div class="cs-narrative">
+
+      <div class="cs-carousel" data-carousel>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="slide"><img src="assets/img/rtos/car.jpg" alt="The finished car with its board mounted" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/rtos/board.jpg" alt="The bare custom PCB" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/rtos/pcb-layout.jpg" alt="The board layout in Fusion" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/rtos/schematic.jpg" alt="The board schematic" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/rtos/team.jpg" alt="Lucas and his lab partner" loading="lazy"></div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+          <button class="carousel-btn next" aria-label="Next image">›</button>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
+
+      <h3>Context</h3>
+      <p>This is the project that made real-time systems actually click for me. The whole class was really one long build: write a real-time operating system from scratch in C, then trust it to drive a real car. There was no pre-made scheduler and no shortcuts, so a bug was never just a red underline in an editor. It was a car that wouldn't stop.</p>
+
+      <h3>Approach</h3>
+      <p>The heart of the whole thing is the scheduler, so that is where most of my time went. I made it preemptive and priority based, with Rate Monotonic admission control, which is a fancy way of saying it only accepts a new task if it can actually promise to run everything on time. Sharing resources safely was the harder part. I used priority-ceiling mutexes so a low-priority task can't quietly hold up a high-priority one, and getting that right took a lot of failed test runs and a few long nights with a waveform viewer.</p>
+
+      <h3>Build</h3>
+      <p>It came together in stages, one lab at a time. First a custom PCB to wire the STM32 up to the car's motor, then the kernel itself, one piece at a time: a bootloader, device drivers, timers and interrupts, and finally the scheduler and mutexes. Once the kernel could stand on its own, I connected it to the car. The PID controller closes the loop on encoder feedback, with live speed and PID terms on an onboard LCD and a small Python tool graphing target versus actual speed in real time. I built it with a partner, and we passed the course's test suite one stubborn case at a time.</p>
+
+      <h3>Result</h3>
+      <p>In the end, it drove. The car held its target speed on top of a kernel I had written from nothing, and it passed the full test suite. The grade was nice, but the real takeaway was simpler: you can't hand-wave timing when a wheel is actually spinning. That is the lesson that made embedded systems stick for me.</p>
+
+      <div class="timeline" data-timeline>
+        <div class="lbl">how it came together, lab by lab</div>
+        <div class="ph-stepper six">
+          <div class="ph-line"></div>
+          <div class="ph-nodes">
+            <button class="ph-node active" data-phase="0"><span class="ph-dot"></span><span class="ph-name">Custom PCB</span><span class="ph-meta">lab 0</span></button>
+            <button class="ph-node" data-phase="1"><span class="ph-dot"></span><span class="ph-name">Bootloader</span><span class="ph-meta">lab 1</span></button>
+            <button class="ph-node" data-phase="2"><span class="ph-dot"></span><span class="ph-name">Drivers</span><span class="ph-meta">lab 2</span></button>
+            <button class="ph-node" data-phase="3"><span class="ph-dot"></span><span class="ph-name">Timers &amp; IRQs</span><span class="ph-meta">lab 3</span></button>
+            <button class="ph-node" data-phase="4"><span class="ph-dot"></span><span class="ph-name">The kernel</span><span class="ph-meta">lab 4</span></button>
+            <button class="ph-node" data-phase="5"><span class="ph-dot"></span><span class="ph-name">Motor control</span><span class="ph-meta">lab 5</span></button>
+          </div>
+        </div>
+
+        <div class="ph-panels">
+          <div class="ph-panel" data-panel="0">
+            <div class="ph-panel-lbl">lab 0 · custom PCB</div>
+            <div class="ph-desc">Before any code, we designed and fabricated our own board to connect the STM32 to the car's motor. I laid it out as an Arduino-style shield, and snuck my name into the silkscreen.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/rtos/pcb-layout.jpg" alt="Board layout in Fusion" loading="lazy"></div><div class="pcap">The layout in Fusion</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/rtos/board.jpg" alt="The bare board" loading="lazy"></div><div class="pcap">Fresh from the fab</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/rtos/schematic.jpg" alt="The schematic" loading="lazy"></div><div class="pcap">The schematic</div></div>
+            </div>
+          </div>
+
+          <div class="ph-panel" data-panel="1" hidden>
+            <div class="ph-panel-lbl">lab 1 · bootloader</div>
+            <div class="ph-desc">Wrote the bootloader that loads and starts our own code on the board. My note in the README at the time was just: "it was a bit strange."</div>
+          </div>
+
+          <div class="ph-panel" data-panel="2" hidden>
+            <div class="ph-panel-lbl">lab 2 · drivers &amp; MMIO</div>
+            <div class="ph-desc">Built the device drivers and memory-mapped I/O, the layer that actually lets your code read and write the hardware.</div>
+          </div>
+
+          <div class="ph-panel" data-panel="3" hidden>
+            <div class="ph-panel-lbl">lab 3 · timers, interrupts, and system calls</div>
+            <div class="ph-desc">Added the OS primitives underneath everything: timers to keep time, interrupts to react to the world, and system calls to cross safely between user code and the kernel.</div>
+          </div>
+
+          <div class="ph-panel" data-panel="4" hidden>
+            <div class="ph-panel-lbl">lab 4 · the real-time kernel</div>
+            <div class="ph-desc">The big one. A preemptive, priority-based kernel with Rate Monotonic admission control and priority-ceiling mutexes, all validated against the course's test suite.</div>
+          </div>
+
+          <div class="ph-panel" data-panel="5" hidden>
+            <div class="ph-panel-lbl">lab 5 · motor control</div>
+            <div class="ph-desc">Everything comes together: the finished kernel driving the car with PID control, live telemetry on an LCD, and a Python plot of target versus actual speed.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/rtos/car.jpg" alt="The finished car" loading="lazy"></div><div class="pcap">The finished car</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/rtos/team.jpg" alt="Lucas and his lab partner" loading="lazy"></div><div class="pcap">Me and my lab partner</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="closing">
+    <div class="closing-top">
+      <div class="cta-eyebrow">get in touch</div>
+      <h2>Let's build something.</h2>
+      <p>If you're building something interesting, robotics, hardware, or otherwise, I'd love to hear about it. A role, a project, or just a hello all work.</p>
+      <div class="closing-links">
+        <a class="primary email-reveal" href="#" data-e="108,115,105,103,110,111,114,105,64,97,110,100,114,101,119,46,99,109,117,46,101,100,117"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> <span class="et">Email me</span></a>
+        <a href="https://linkedin.com/in/lucas-d-signorini/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg> LinkedIn</a>
+        <a href="assets/Lucas_Signorini_Resume.pdf" download class="js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg> Resume</a>
+      </div>
+    </div>
+    <div class="footer">
+      <span>© 2026 Lucas Signorini · Pittsburgh, PA</span>
+      <a href="index.html">← back to home</a>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Air Hockey Robot — Lucas Signorini</title>
+<meta name="description" content="A robot air-hockey opponent built in a one-week Build 18 sprint at CMU, then taught to track the puck with computer vision after winning a Robotics Club grant." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body class="case">
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="index.html" id="brand" class="brand">Lucas Signorini</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#projects">projects</a>
+      <a href="index.html#experience">experience</a>
+      <a href="index.html#about">about</a>
+      <a href="index.html#contact">contact me</a>
+      <a href="assets/Lucas_Signorini_Resume.pdf" download class="btn-resume js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>resume</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="cs-head">
+    <a href="index.html#projects" class="back">← projects</a>
+    <h1>Air Hockey Robot</h1>
+    <div class="sub">A robot you can actually play air hockey against.</div>
+  </div>
+
+  <div class="cs-grid">
+
+    <aside class="cs-rail">
+      <div class="cs-spec">
+        <div class="grp"><div class="k">role</div><div class="v">Mechanical · Electrical</div></div>
+        <div class="grp"><div class="k">tools</div><div class="v">Arduino · NEMA 23 stepper · CV</div></div>
+        <div class="grp"><div class="k">when</div><div class="v">2025 – 2026</div></div>
+        <div class="grp"><div class="k">team</div><div class="v">5–6 people</div></div>
+        <div class="grp"><div class="k">award</div><div class="v accent">Lab Rats · Build 18</div></div>
+        <div class="grp"><div class="k">grant</div><div class="v">$200 · Robotics Club</div></div>
+        <div class="grp"><div class="k">tags</div><div class="v">robotics · computer vision</div></div>
+      </div>
+    </aside>
+
+    <div class="cs-narrative">
+
+      <div class="cs-carousel" data-carousel>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="slide"><img src="assets/img/airhockey/cv1.jpg" alt="The finished robot with its overhead PVC camera mount" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/airhockey/robot1.jpg" alt="The robot mounted on the air hockey table" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/airhockey/play.jpg" alt="Playing against the robot" loading="lazy"></div>
+            <div class="slide"><video src="assets/img/airhockey/gameplay.mp4" poster="assets/img/airhockey/gameplay-poster.jpg" muted playsinline aria-label="The robot in action at Build 18, click to play"></video></div>
+            <div class="slide"><img src="assets/img/airhockey/cv2.jpg" alt="The PVC camera frame over the table in the basement" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/airhockey/striker.jpg" alt="The striker mechanism close up" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/airhockey/electronics.jpg" alt="The DM542T stepper driver and Arduino" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/airhockey/diagram.jpg" alt="The wiring diagram" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/airhockey/carry.jpg" alt="The team hauling the table down the hall" loading="lazy"></div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+          <button class="carousel-btn next" aria-label="Next image">›</button>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
+
+      <h3>Context</h3>
+      <p>Build 18 is a one-week build sprint at CMU, and my team went in wanting an air hockey robot that could see the puck and play on its own. A week is not much time, so we scaled the dream down to something we could actually finish: a robot opponent we controlled ourselves. We got it working, and it won the Lab Rats award for the team that put in the most hours.</p>
+
+      <h3>Approach</h3>
+      <p>The robot is a slider that runs along one end of the table, driven by a NEMA 23 stepper motor through a DM542T driver and an Arduino. When the puck comes at you, the striker slides over to meet it and hits it back. We were happy with it, but we still wanted the original goal of making it see. So we pitched the idea to the Robotics Club, and they gave us a 200 dollar grant to add computer vision, which was amazing.</p>
+
+      <h3>Build</h3>
+      <p>We took the table home and slowly worked on it in a basement over the following months. We built a tall PVC frame that arches over the table and strapped a phone to the top, pointed straight down. The phone streams to a computer that tracks the puck, and the computer sends instructions to the Arduino telling the robot where to move. My part was mostly the hardware: the camera mount, wiring everything together, and the code that drives the striker. There was also a fun thermal bug. We had overclocked the drive motor for speed and it started overheating, so instead of slowing it down I added a cooling fan.</p>
+
+      <h3>Result</h3>
+      <p>And it worked. The robot went from something we drove by hand to something that watches the puck and plays on its own. It is probably the project where I most enjoyed watching mechanical, electrical, and software all click together at once, and getting a grant to keep going made me extra motivated.</p>
+
+      <div class="timeline" data-timeline>
+        <div class="lbl">how it came together</div>
+        <div class="ph-stepper">
+          <div class="ph-line"></div>
+          <div class="ph-nodes">
+            <button class="ph-node active" data-phase="0"><span class="ph-dot"></span><span class="ph-name">The plan</span><span class="ph-meta">on paper</span></button>
+            <button class="ph-node" data-phase="1"><span class="ph-dot"></span><span class="ph-name">Build 18</span><span class="ph-meta">the sprint</span></button>
+            <button class="ph-node" data-phase="2"><span class="ph-dot"></span><span class="ph-name">The grant</span><span class="ph-meta">funding</span></button>
+            <button class="ph-node" data-phase="3"><span class="ph-dot"></span><span class="ph-name">Vision</span><span class="ph-meta">the basement</span></button>
+          </div>
+        </div>
+
+        <div class="ph-panels">
+          <div class="ph-panel" data-panel="0">
+            <div class="ph-panel-lbl">the plan · on paper</div>
+            <div class="ph-desc">Before we touched a motor, we sketched out how the whole thing would work: a stepper-driven slider along one end of the table, a DM542T driver, an Arduino to run it, and how the striker would move to meet the puck.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/airhockey/diagram.jpg" alt="The wiring diagram" loading="lazy"></div><div class="pcap">The wiring plan</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/airhockey/notes.jpg" alt="Handwritten planning notes" loading="lazy"></div><div class="pcap">Working it out on paper</div></div>
+            </div>
+          </div>
+
+          <div class="ph-panel" data-panel="1" hidden>
+            <div class="ph-panel-lbl">build 18 · the one-week sprint</div>
+            <div class="ph-desc">In a single week we built a robot opponent we could control ourselves: a stepper-driven slider, a DM542T driver, and an Arduino. It worked, and it won the Lab Rats award for the team that put in the most hours.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/airhockey/robot1.jpg" alt="The robot on the table" loading="lazy"></div><div class="pcap">The finished sprint build</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/airhockey/striker.jpg" alt="The striker mechanism" loading="lazy"></div><div class="pcap">The striker linkage</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/airhockey/electronics.jpg" alt="The stepper driver and Arduino" loading="lazy"></div><div class="pcap">The DM542T driver and Arduino</div></div>
+            </div>
+          </div>
+
+          <div class="ph-panel" data-panel="2" hidden>
+            <div class="ph-panel-lbl">the grant</div>
+            <div class="ph-desc">We still wanted the original goal of making it see, so we pitched the idea to the Robotics Club and won a 200 dollar grant to add computer vision. Small as it was, winning it kept us motivated to push the project further.</div>
+          </div>
+
+          <div class="ph-panel" data-panel="3" hidden>
+            <div class="ph-panel-lbl">vision · in the basement</div>
+            <div class="ph-desc">Over the next few months, in a basement, we built a tall PVC frame that arches over the table with a phone strapped to the top. The phone watches the puck, a computer tracks it, and the robot plays on its own.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/airhockey/cv1.jpg" alt="The finished robot with overhead camera mount" loading="lazy"></div><div class="pcap">The overhead phone mount</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/airhockey/cv2.jpg" alt="The PVC frame over the table" loading="lazy"></div><div class="pcap">The PVC frame over the table</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/airhockey/play.jpg" alt="Playing against it" loading="lazy"></div><div class="pcap">Playing against it</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="closing">
+    <div class="closing-top">
+      <div class="cta-eyebrow">get in touch</div>
+      <h2>Let's build something.</h2>
+      <p>If you're building something interesting, robotics, hardware, or otherwise, I'd love to hear about it. A role, a project, or just a hello all work.</p>
+      <div class="closing-links">
+        <a class="primary email-reveal" href="#" data-e="108,115,105,103,110,111,114,105,64,97,110,100,114,101,119,46,99,109,117,46,101,100,117"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> <span class="et">Email me</span></a>
+        <a href="https://linkedin.com/in/lucas-d-signorini/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg> LinkedIn</a>
+        <a href="assets/Lucas_Signorini_Resume.pdf" download class="js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg> Resume</a>
+      </div>
+    </div>
+    <div class="footer">
+      <span>© 2026 Lucas Signorini · Pittsburgh, PA</span>
+      <a href="index.html">← back to home</a>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

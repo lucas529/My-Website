@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PIPV Contactless Safety Sensor — Lucas Signorini</title>
+<meta name="description" content="An ongoing CMU CyLab research project with Professor Anthony Rowe: a safety device for plug-in solar that reads a breaker's current without touching it and can cut the solar unit off if conditions look unsafe." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body class="case">
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="index.html" id="brand" class="brand">Lucas Signorini</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#projects">projects</a>
+      <a href="index.html#experience">experience</a>
+      <a href="index.html#about">about</a>
+      <a href="index.html#contact">contact me</a>
+      <a href="assets/Lucas_Signorini_Resume.pdf" download class="btn-resume js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>resume</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="cs-head">
+    <a href="index.html#projects" class="back">← projects</a>
+    <h1>PIPV Contactless Safety Sensor</h1>
+    <div class="sub">Making plug-in solar safe to plug in.</div>
+    <div class="cs-status"><span class="status-pill">in progress</span></div>
+  </div>
+
+  <div class="cs-grid">
+
+    <aside class="cs-rail">
+      <div class="cs-spec">
+        <div class="grp"><div class="k">role</div><div class="v">Research · Hardware</div></div>
+        <div class="grp"><div class="k">lab</div><div class="v">CMU CyLab</div></div>
+        <div class="grp"><div class="k">advisor</div><div class="v">Prof. Anthony Rowe</div></div>
+        <div class="grp"><div class="k">when</div><div class="v">2026 · ongoing</div></div>
+        <div class="grp"><div class="k">focus</div><div class="v accent">Contactless current sensing</div></div>
+        <div class="grp"><div class="k">tags</div><div class="v">research · power systems</div></div>
+      </div>
+    </aside>
+
+    <div class="cs-narrative">
+
+      <h3>Context</h3>
+      <p>Plug-in solar (PIPV) is a newer category in the US: small solar units you can plug straight into a wall outlet, no electrician required. That convenience is also the risk, since a normal outlet was never meant to have power pushed back into it. At CMU's CyLab I'm working with Professor Anthony Rowe on a safety device for exactly this problem. We started it from scratch, and I still am the only person working on it.</p>
+
+      <h3>Approach</h3>
+      <p>The device has two halves. The first is a contactless current sensor that sits near the breaker and reads how much current is flowing without ever touching the wire, by taking advantage of how the breaker is built inside. The second is an adapter that sits between the solar unit and the wall outlet. The two talk to each other, and if the sensor sees something unsafe, the adapter cuts the solar unit off from the house circuit.</p>
+
+      <h3>Build</h3>
+      <p>Most of my time so far has gone into the sensing side, and into a way to test it honestly. For the sensor I wound my own coil around a ferrite core to pick up the current, feeding a small signal-conditioning circuit so I can actually read it. To validate any of it safely, I'm building a realistic mock household electrical panel, real breakers and wiring, with electric space heaters as the load, so I can push known currents through it and see what the sensor reports. A lot of the early work was also just reading, since power systems were new to me, and I understand them a great deal better now.</p>
+
+      <h3>Where it's at</h3>
+      <p>The project is still in progress. The test bench is almost built and parts are still arriving, and the next steps are digitizing the sensor's signal and building the logic that decides when to shut the solar unit off. It's my first real research project, from a blank page to a physical test bench, and it's taught me how much of engineering is figuring out what to even build first.</p>
+
+      <div class="timeline" data-timeline>
+        <div class="lbl">how it's coming together</div>
+        <div class="ph-stepper">
+          <div class="ph-line"></div>
+          <div class="ph-nodes">
+            <button class="ph-node active" data-phase="0"><span class="ph-dot"></span><span class="ph-name">Why</span><span class="ph-meta">the risk</span></button>
+            <button class="ph-node" data-phase="1"><span class="ph-dot"></span><span class="ph-name">Two halves</span><span class="ph-meta">the design</span></button>
+            <button class="ph-node" data-phase="2"><span class="ph-dot"></span><span class="ph-name">The sensor</span><span class="ph-meta">contactless</span></button>
+            <button class="ph-node" data-phase="3"><span class="ph-dot"></span><span class="ph-name">The test bench</span><span class="ph-meta">validating</span></button>
+          </div>
+        </div>
+
+        <div class="ph-panels">
+          <div class="ph-panel" data-panel="0">
+            <div class="ph-panel-lbl">why</div>
+            <div class="ph-desc">Plug-in solar is newly legal and genuinely convenient, but pushing power back into an ordinary outlet is risky, and a safety layer was missing.</div>
+          </div>
+
+          <div class="ph-panel" data-panel="1" hidden>
+            <div class="ph-panel-lbl">two halves</div>
+            <div class="ph-desc">A contactless sensor at the breaker and an adapter between the solar unit and the outlet, talking to each other. If the sensor sees something unsafe, the adapter cuts the solar unit off from the house circuit.</div>
+          </div>
+
+          <div class="ph-panel" data-panel="2" hidden>
+            <div class="ph-panel-lbl">the sensor</div>
+            <div class="ph-desc">A hand-wound coil on a ferrite core that reads the breaker's current without contact, using how the breaker is built inside, feeding a small circuit so I can actually read the signal.</div>
+          </div>
+
+          <div class="ph-panel" data-panel="3" hidden>
+            <div class="ph-panel-lbl">the test bench</div>
+            <div class="ph-desc">A mock household panel with real breakers and space-heater loads, so I can push known currents through it and check what the sensor sees. Still in progress.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="closing">
+    <div class="closing-top">
+      <div class="cta-eyebrow">get in touch</div>
+      <h2>Let's build something.</h2>
+      <p>If you're building something interesting, robotics, hardware, or otherwise, I'd love to hear about it. A role, a project, or just a hello all work.</p>
+      <div class="closing-links">
+        <a class="primary email-reveal" href="#" data-e="108,115,105,103,110,111,114,105,64,97,110,100,114,101,119,46,99,109,117,46,101,100,117"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> <span class="et">Email me</span></a>
+        <a href="https://linkedin.com/in/lucas-d-signorini/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg> LinkedIn</a>
+        <a href="assets/Lucas_Signorini_Resume.pdf" download class="js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg> Resume</a>
+      </div>
+    </div>
+    <div class="footer">
+      <span>© 2026 Lucas Signorini · Pittsburgh, PA</span>
+      <a href="index.html">← back to home</a>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lucas Signorini — Electrical & Computer Engineer</title>
+<meta name="description" content="Lucas Signorini — Electrical & Computer Engineering at Carnegie Mellon. Embedded systems, firmware, power electronics, robotics, and PCB design." />
+<meta property="og:title" content="Lucas Signorini — Electrical & Computer Engineer" />
+<meta property="og:description" content="Embedded systems, firmware, power electronics, robotics, and PCB design." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body class="home">
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="nav-in">
+    <a href="#home" id="brand" class="brand"><span class="lead">L</span><span class="rest">ucas</span><span class="gap"> </span><span class="lead">S</span><span class="rest">ignorini</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#projects">projects</a>
+      <a href="#experience">experience</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact me</a>
+      <a href="assets/Lucas_Signorini_Resume.pdf" download class="btn-resume js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>resume</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ===================== HERO ===================== -->
+<section id="home" class="hero">
+  <h1>Lucas Signorini</h1>
+  <p class="descriptor">Electrical &amp; computer engineering student at Carnegie Mellon, into hardware and robotics, and still fascinated by how all of it works.</p>
+  <div class="hero-actions">
+    <a class="h-btn primary" href="#contact">Get in touch</a>
+    <a class="h-btn" href="#about">About me →</a>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section id="projects" class="section">
+  <div class="section-head"><span class="lbl">projects</span><span class="rule"></span></div>
+
+  <div class="filters">
+    <button class="chip active" data-filter="all">all</button>
+    <button class="chip" data-filter="embedded">embedded</button>
+    <button class="chip" data-filter="robotics">robotics</button>
+    <button class="chip" data-filter="digital">digital</button>
+    <button class="chip" data-filter="hardware">hardware</button>
+    <button class="chip" data-filter="controls">controls</button>
+  </div>
+
+  <!-- flagship -->
+  <article class="proj-row flag" data-tags="embedded controls" data-href="rtos.html">
+    <a class="proj-link" href="rtos.html" aria-label="View Custom RTOS to PID Car"></a>
+    <span class="thumb"><img src="assets/img/proj-rtos.jpg" alt="The RTOS car with its custom motor board" loading="lazy"></span>
+    <div class="proj-body">
+      <div class="proj-title-row"><span class="proj-title">Custom RTOS to PID Car</span><span class="feat-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.7L5.8 22l1.6-7L2 10.3l7.1-.6z"/></svg></span></div>
+      <div class="proj-desc">A small real-time operating system I wrote from scratch in C, then used to drive a little car with PID control.</div>
+      <div class="proj-meta"><span class="origin-pill course">course</span><span class="tagchip">embedded</span><span class="tagchip">controls</span><span class="proj-date">2026</span></div>
+    </div>
+    <span class="proj-arrow mono">→</span>
+  </article>
+
+  <!-- flagship, with video badge -->
+  <article class="proj-row flag" data-tags="robotics embedded" data-href="airhockey.html">
+    <a class="proj-link" href="airhockey.html" aria-label="View Air Hockey Robot"></a>
+    <span class="thumb"><img src="assets/img/proj-airhockey.jpg" alt="Air hockey table with the robot's return mechanism" loading="lazy"></span>
+    <div class="proj-body">
+      <div class="proj-title-row"><span class="proj-title">Air Hockey Robot</span><span class="feat-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.7L5.8 22l1.6-7L2 10.3l7.1-.6z"/></svg></span></div>
+      <div class="proj-desc">A robot air-hockey opponent that watches the puck with computer vision and returns your shots.</div>
+      <div class="proj-meta"><span class="origin-pill competition">competition</span><span class="tagchip">robotics</span><span class="tagchip">computer vision</span><span class="proj-date">2025</span></div>
+    </div>
+    <span class="proj-arrow mono">→</span>
+  </article>
+
+  <!-- flagship -->
+  <article class="proj-row flag" data-tags="digital" data-href="fpga.html">
+    <a class="proj-link" href="fpga.html" aria-label="View FPGA Bluetooth Serial Receiver"></a>
+    <span class="thumb"><img src="assets/img/proj-fpga.jpg" alt="The FPGA development board" loading="lazy"></span>
+    <div class="proj-body">
+      <div class="proj-title-row"><span class="proj-title">FPGA Bluetooth Serial Receiver</span><span class="feat-star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.7L5.8 22l1.6-7L2 10.3l7.1-.6z"/></svg></span></div>
+      <div class="proj-desc">A gate-level Bluetooth receiver I designed on an FPGA, with error-correcting decoding.</div>
+      <div class="proj-meta"><span class="origin-pill course">course</span><span class="tagchip">digital</span><span class="tagchip">FPGA</span><span class="proj-date">2025</span></div>
+    </div>
+    <span class="proj-arrow mono">→</span>
+  </article>
+
+  <!-- minors -->
+  <article class="proj-row" data-tags="hardware" data-href="sla.html">
+    <a class="proj-link" href="sla.html" aria-label="View SLA Disconnect Board"></a>
+    <span class="thumb"><img src="assets/img/proj-sla.jpg?v=2" alt="The disconnect board" loading="lazy"></span>
+    <div class="proj-body">
+      <div class="proj-title-row"><span class="proj-title">SLA Disconnect Board</span></div>
+      <div class="proj-desc">A custom disconnect PCB, protoboard to production, that extended a robot's backup-battery life from ~1 month to a year.</div>
+      <div class="proj-meta"><span class="origin-pill internship">internship</span><span class="tagchip">hardware</span><span class="tagchip">power</span><span class="proj-date">2025</span></div>
+    </div>
+    <span class="proj-arrow mono">→</span>
+  </article>
+
+  <article class="proj-row" data-tags="hardware embedded" data-href="pipv.html">
+    <a class="proj-link" href="pipv.html" aria-label="View PIPV Contactless Safety Sensor"></a>
+    <span class="thumb ph"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="m5 18 5-5 3.5 3.5L17 14l2 2"/></svg></span>
+    <div class="proj-body">
+      <div class="proj-title-row"><span class="proj-title">PIPV Contactless Safety Sensor</span></div>
+      <div class="proj-desc">A safety device for plug-in solar: it reads a breaker's current without touching it, paired with an adapter that sits between the solar unit and the wall outlet.</div>
+      <div class="proj-meta"><span class="origin-pill research">research</span><span class="status-pill">in progress</span><span class="tagchip">hardware</span><span class="tagchip">power / analog</span><span class="proj-date">2026</span></div>
+    </div>
+    <span class="proj-arrow mono">→</span>
+  </article>
+
+  <article class="proj-row" data-tags="hardware" data-href="etrash.html">
+    <a class="proj-link" href="etrash.html" aria-label="View E-TRASH Hovercraft"></a>
+    <span class="thumb"><img src="assets/img/proj-etrash.jpg" alt="The e-waste hovercraft" loading="lazy"></span>
+    <div class="proj-body">
+      <div class="proj-title-row"><span class="proj-title">E-TRASH Hovercraft</span></div>
+      <div class="proj-desc">A working hovercraft built entirely from scavenged e-waste at a hackathon (took first place).</div>
+      <div class="proj-meta"><span class="origin-pill competition">competition</span><span class="tagchip">hardware</span><span class="tagchip">prototyping</span><span class="proj-date">2025</span></div>
+    </div>
+    <span class="proj-arrow mono">→</span>
+  </article>
+
+  <article class="proj-row" data-tags="hardware embedded" data-href="led-panel.html">
+    <a class="proj-link" href="led-panel.html" aria-label="View 30×30 LED Display Panel"></a>
+    <span class="thumb"><img src="assets/img/proj-led.jpg" alt="The 30 by 30 LED matrix panel" loading="lazy"></span>
+    <div class="proj-body">
+      <div class="proj-title-row"><span class="proj-title">30×30 LED Display Panel</span></div>
+      <div class="proj-desc">A 30×30 LED display I built in high school, with custom software for drawing, scrolling messages, and a live preview of the panel.</div>
+      <div class="proj-meta"><span class="origin-pill personal">personal</span><span class="tagchip">hardware</span><span class="tagchip">embedded</span><span class="proj-date">2023</span></div>
+    </div>
+    <span class="proj-arrow mono">→</span>
+  </article>
+
+  <article class="proj-row" data-tags="robotics embedded" data-href="hand-robot.html">
+    <a class="proj-link" href="hand-robot.html" aria-label="View Hand-Controlled Robot"></a>
+    <span class="thumb"><img src="assets/img/proj-hand.jpg?v=3" alt="The hand-controlled robot" loading="lazy"></span>
+    <div class="proj-body">
+      <div class="proj-title-row"><span class="proj-title">Hand-Controlled Robot</span></div>
+      <div class="proj-desc">A wearable-glove-controlled robot that mirrors your hand movements in real time over Bluetooth.</div>
+      <div class="proj-meta"><span class="origin-pill personal">personal</span><span class="tagchip">robotics</span><span class="tagchip">embedded</span><span class="proj-date">2022</span></div>
+    </div>
+    <span class="proj-arrow mono">→</span>
+  </article>
+
+  <article class="proj-row" data-tags="digital" data-href="logic-gate.html">
+    <a class="proj-link" href="logic-gate.html" aria-label="View Logic Gate Simulator"></a>
+    <span class="thumb"><img src="assets/img/proj-logicgate.jpg?v=3" alt="The logic gate simulator" loading="lazy"></span>
+    <div class="proj-body">
+      <div class="proj-title-row"><span class="proj-title">Logic Gate Simulator</span></div>
+      <div class="proj-desc">A Python tool to graphically build and simulate logic-gate circuits.</div>
+      <div class="proj-meta"><span class="origin-pill course">course</span><span class="tagchip">digital</span><span class="tagchip">software</span><span class="proj-date">2024</span></div>
+    </div>
+    <span class="proj-arrow mono">→</span>
+  </article>
+
+  <article class="proj-row" data-tags="hardware" data-href="ruben-tube.html">
+    <a class="proj-link" href="ruben-tube.html" aria-label="View Ruben's Tube"></a>
+    <span class="thumb"><img src="assets/img/proj-ruben.jpg" alt="The Ruben's tube in action" loading="lazy"></span>
+    <div class="proj-body">
+      <div class="proj-title-row"><span class="proj-title">Ruben's Tube</span></div>
+      <div class="proj-desc">A flame-topped pipe I built from scratch that makes a standing sound wave visible as dancing fire.</div>
+      <div class="proj-meta"><span class="origin-pill personal">personal</span><span class="tagchip">hardware</span><span class="tagchip">physics</span><span class="proj-date">2022</span></div>
+    </div>
+    <span class="proj-arrow mono">→</span>
+  </article>
+
+  <div class="filter-empty">No projects in this category yet.</div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience" class="section">
+  <div class="section-head"><span class="lbl">experience</span><span class="rule"></span></div>
+
+  <div class="entry">
+    <div class="meta">
+      <span class="logo"><img src="assets/img/logo-onward.jpg" alt="Onward Robotics logo"></span>
+      <div class="org">Onward Robotics</div>
+      <div class="role-sm">EE Intern, Hardware</div>
+      <div class="when">May–Aug 2025<br/>Pittsburgh, PA</div>
+    </div>
+    <div class="body">
+      <div class="role">Electrical Engineering Intern, Hardware Team</div>
+      <div class="texture">My first real taste of engineering in industry — a startup summer where I got to do a bit of everything, from a production PCB to a week of overnight testing out in a warehouse.</div>
+      <div class="sub-list">
+        <details class="sub" open>
+          <summary class="sub-head"><span class="tog"></span><span class="st">SLA Disconnect Board</span></summary>
+          <div class="sub-detail">The robot's backup batteries were draining way too fast, turns out the thing measuring them was quietly draining them too, even when the robot was off. I designed a board to cut them off completely when it powers down, took it from a protoboard to an oddly-shaped production PCB to fit it inside the robot, and pushed backup life from about a month to a year. Once testing was complete I significantly improved the PCB shape to optimize space.
+            <br/><a href="sla.html" class="cs-link">Project description →</a></div>
+        </details>
+        <details class="sub">
+          <summary class="sub-head"><span class="tog"></span><span class="st">Parts Database Tool</span></summary>
+          <div class="sub-detail">For the intern pitch challenge I was the only one who went technical. The team's parts database was scary-fragile, one accidental select-all-delete could wipe it, so I pitched a safer form-based version. Leadership liked it enough to have me build it, so I taught myself Google Forms and Sheets, made the tool, and wrote a guide for the team to try out.</div>
+        </details>
+        <details class="sub">
+          <summary class="sub-head"><span class="tog"></span><span class="st">Clamping Circuit</span></summary>
+          <div class="sub-detail">A 60V protection circuit was burning off more power than some parts could handle. I helped run tests to pin down what was happening, wrote it up in a wiki, and we fixed it by re-picking component values so it stayed within spec.</div>
+        </details>
+        <details class="sub">
+          <summary class="sub-head"><span class="tog"></span><span class="st">Second Manual-Mode Button</span></summary>
+          <div class="sub-detail">Small one, but satisfying: the manual-mode button was annoying to reach from the front of the robot, so I was asked to add a second one in the front handle and wrote a protocol to roll it out across the fleet.</div>
+        </details>
+        <details class="sub">
+          <summary class="sub-head"><span class="tog"></span><span class="st">Intern Pitch Deck</span></summary>
+          <div class="sub-detail">One of our intern assignments was to pitch ways the company could improve. Most people went cultural or marketing — I went technical, with a deck of process fixes, tweaks to the picker's experience, and some "Lumabot 2.0" hardware ideas, all from watching how the robots actually get used.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESEARCH ===================== -->
+<section id="research" class="section">
+  <div class="section-head"><span class="lbl">research</span><span class="rule"></span></div>
+
+  <div class="entry">
+    <div class="meta">
+      <span class="logo"><img src="assets/img/logo-cylab.jpg" alt="CMU CyLab logo"></span>
+      <div class="org">CMU CyLab</div>
+      <div class="role-sm">Undergraduate Researcher</div>
+      <div class="when">Jun 2026 – Present<br/>Advisor: Prof. A. Rowe</div>
+    </div>
+    <div class="body">
+      <div class="role">Undergraduate Researcher</div>
+      <div class="texture">The only undergrad on a from-scratch CyLab project with Prof. Anthony Rowe, building a safety device for the newly-legal plug-in solar systems.</div>
+      <div class="sub-list">
+        <details class="sub" open>
+          <summary class="sub-head"><span class="tog"></span><span class="st">Contactless Current Sensor</span></summary>
+          <div class="sub-detail">The core idea: read how much current is flowing through a breaker without ever touching it, by taking advantage of how the breaker is built inside.
+            <br/><a href="pipv.html" class="cs-link">Project description →</a></div>
+        </details>
+        <details class="sub">
+          <summary class="sub-head"><span class="tog"></span><span class="st">Panel Test Bench</span></summary>
+          <div class="sub-detail">Building a test bench that mimics a real residential panel (code-rated breakers, space-heater loads) to validate the sensor.</div>
+        </details>
+        <details class="sub">
+          <summary class="sub-head"><span class="tog"></span><span class="st">Plug-in-play PV Adapter</span></summary>
+          <div class="sub-detail">The other half of the system: an adapter that plugs in between a plug-in solar unit and the wall outlet. The idea is that it talks to the current sensor and cuts the solar unit off from the house circuit if things look unsafe.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="section">
+  <div class="section-head"><span class="lbl">about</span><span class="rule"></span></div>
+
+  <div class="about-grid">
+    <div class="about-rail">
+      <span class="portrait"><img src="assets/img/portrait.jpg" alt="Lucas Signorini"></span>
+      <div class="facts">
+        <div class="row"><span class="k">school</span><span class="v">Carnegie Mellon University</span></div>
+        <div class="row"><span class="k">class of</span><span class="v">2027</span></div>
+        <div class="row"><span class="k">gpa</span><span class="v">3.67</span></div>
+        <div class="row"><span class="k">languages</span><span class="v">EN · PT · ES</span></div>
+      </div>
+      <div class="awards">
+        <div class="k">awards</div>
+        <div class="a"><span class="pl">1st</span> · Red Robot Competition</div>
+        <div class="a"><span class="pl">1st</span> · E-TRASH Hackathon</div>
+        <div class="a">Dean's List ×3</div>
+      </div>
+    </div>
+
+    <div class="about-body">
+      <h2>Hi, I'm Lucas.</h2>
+      <p>As a kid I wanted to be an inventor, the kind who adds a little to what humanity knows. There's no major for that, so I went with engineering. I chose ECE because, honestly, it felt like black magic. I could reason my way through mechanical things, but circuits just worked, and that bugged me enough that I had to understand why. That curiosity has since spread across the whole field, pulling me deeper into robotics and the ECE projects I find most interesting. Some of that curiosity probably originates from moving around a fair bit. I've lived in eight places, including five and a half years in Brazil, where my family's from.</p>
+      <p>Outside of engineering, I play tennis, I'm getting into HEMA (historical swordfighting), and I run on tea instead of coffee (coffee and I don't get along), with the occasional round of "For Honor" with friends. Mostly, though, I just like learning random things, like history and philosophy.</p>
+
+      <div class="about-block">
+        <div class="k">what i want to do</div>
+        <p>Long-term I really want to end up in robotics, but honestly I'd be happy anywhere I get to build real, impactful things and learn from intellectual people. I'm planning to do a one-year master's, and I'm open to internships and full-time roles.</p>
+      </div>
+
+      <div class="about-block uptodate">
+        <div class="k">what i'm up to</div>
+        <div class="grp">
+          <div class="sub-k">reading</div>
+          <div class="val">The Strength of the Few</div>
+        </div>
+        <div class="grp">
+          <div class="sub-k">learning</div>
+          <div class="val">Cadence EMX, RF crosstalk modeling, quantum physics, and how to use AI effectively</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING ===================== -->
+<section id="contact" class="closing">
+  <div class="closing-top">
+    <div class="cta-eyebrow">get in touch</div>
+    <h2>Let's build something.</h2>
+    <p>If you're building something interesting, robotics, hardware, or otherwise, I'd love to hear about it. A role, a project, or just a hello all work.</p>
+    <div class="closing-links">
+      <a class="primary email-reveal" href="#" data-e="108,115,105,103,110,111,114,105,64,97,110,100,114,101,119,46,99,109,117,46,101,100,117"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> <span class="et">Email me</span></a>
+      <a href="https://linkedin.com/in/lucas-d-signorini/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg> LinkedIn</a>
+      <a href="assets/Lucas_Signorini_Resume.pdf" download class="js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg> Resume</a>
+    </div>
+  </div>
+  <div class="footer">
+    <span>© 2026 Lucas Signorini · Pittsburgh, PA</span>
+    <a href="#home">back to top ↑</a>
+  </div>
+</section>
+
+</main>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

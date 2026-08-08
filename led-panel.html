@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>30×30 LED Display Panel — Lucas Signorini</title>
+<meta name="description" content="A 900-LED programmable display built in high school for my IB Computer Science project, with custom software to draw, scroll text, and preview it live." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+</head>
+<body class="case">
+
+<header class="nav">
+  <div class="nav-in">
+    <a href="index.html" id="brand" class="brand">Lucas Signorini</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#projects">projects</a>
+      <a href="index.html#experience">experience</a>
+      <a href="index.html#about">about</a>
+      <a href="index.html#contact">contact me</a>
+      <a href="assets/Lucas_Signorini_Resume.pdf" download class="btn-resume js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>resume</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="cs-head">
+    <a href="index.html#projects" class="back">← projects</a>
+    <h1>30×30 LED Display Panel</h1>
+    <div class="sub">900 LEDs, and the software to actually drive them.</div>
+  </div>
+
+  <div class="cs-grid">
+
+    <aside class="cs-rail">
+      <div class="cs-spec">
+        <div class="grp"><div class="k">role</div><div class="v">Hardware · Software</div></div>
+        <div class="grp"><div class="k">tools</div><div class="v">Raspberry Pi · Python</div></div>
+        <div class="grp"><div class="k">when</div><div class="v">2022 · high school</div></div>
+        <div class="grp"><div class="k">context</div><div class="v">IB Computer Science IA</div></div>
+        <div class="grp"><div class="k">outcome</div><div class="v accent">900 LEDs, fully programmable</div></div>
+        <div class="grp"><div class="k">tags</div><div class="v">hardware · embedded</div></div>
+      </div>
+    </aside>
+
+    <div class="cs-narrative">
+
+      <div class="cs-carousel" data-carousel>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="slide"><img src="assets/img/led/lit.jpg" alt="The LED panel lit up and running" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/led/panel.jpg" alt="The full 30 by 30 LED matrix" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/led/wiring.jpg" alt="The panel wiring and breadboard" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/led/paint.jpg" alt="The paint tool with RGB sliders" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/led/text.jpg" alt="Previewing scrolling text on screen" loading="lazy"></div>
+            <div class="slide"><img src="assets/img/led/setup.jpg" alt="The Raspberry Pi setup" loading="lazy"></div>
+          </div>
+          <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+          <button class="carousel-btn next" aria-label="Next image">›</button>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
+
+      <h3>Context</h3>
+      <p>This was my IB Computer Science project, and the biggest thing I had built at that point. I wanted a big programmable display, so I made a 30 by 30 grid of individually addressable LEDs, 900 in total, that I could draw on and scroll text across, all from software I wrote myself.</p>
+
+      <h3>Approach</h3>
+      <p>The hardware is a wall of addressable LED strips wired into a grid and driven by a Raspberry Pi. The fun part was the software. Rather than hard-coding what it shows, I built a whole little app: you can paint a picture pixel by pixel, type out text from a bitmap font I drew letter by letter, queue up several displays with their own timing, and preview all of it on screen before it ever reaches the panel.</p>
+
+      <h3>Build</h3>
+      <p>The whole thing runs off a breadboard and a lot of jumper wires. The software is where it really grew: a paint tool with RGB sliders, a text creator, an ordering and timing manager, and a live simulator. I even had to map out all the LEDs by hand, since they are wired in a back and forth snake rather than neat rows.</p>
+
+      <h3>Result</h3>
+      <p>It worked, and I was proud of it. It also grew into one giant file held together with a lot of enthusiasm, which is exactly how it taught me my favorite lesson: plan the structure first. I still look back at it fondly, and it is a big reason I now think a design through before diving in.</p>
+
+      <div class="timeline" data-timeline>
+        <div class="lbl">how it came together</div>
+        <div class="ph-stepper three">
+          <div class="ph-line"></div>
+          <div class="ph-nodes">
+            <button class="ph-node active" data-phase="0"><span class="ph-dot"></span><span class="ph-name">The panel</span><span class="ph-meta">hardware</span></button>
+            <button class="ph-node" data-phase="1"><span class="ph-dot"></span><span class="ph-name">The software</span><span class="ph-meta">the app</span></button>
+            <button class="ph-node" data-phase="2"><span class="ph-dot"></span><span class="ph-name">Lit up</span><span class="ph-meta">it runs</span></button>
+          </div>
+        </div>
+
+        <div class="ph-panels">
+          <div class="ph-panel" data-panel="0">
+            <div class="ph-panel-lbl">the panel</div>
+            <div class="ph-desc">900 addressable LEDs wired into a 30 by 30 grid, all off a breadboard and a whole lot of jumper wires.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/led/panel.jpg" alt="The full LED matrix" loading="lazy"></div><div class="pcap">The full 30 by 30 matrix</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/led/wiring.jpg" alt="The wiring and breadboard" loading="lazy"></div><div class="pcap">Wiring it all up</div></div>
+            </div>
+          </div>
+
+          <div class="ph-panel" data-panel="1" hidden>
+            <div class="ph-panel-lbl">the software</div>
+            <div class="ph-desc">A little app to run it all: paint a picture pixel by pixel, type text from a hand-drawn bitmap font, and preview everything on screen before sending it to the panel.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/led/paint.jpg" alt="The paint tool" loading="lazy"></div><div class="pcap">The paint tool</div></div>
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/led/text.jpg" alt="Previewing text on screen" loading="lazy"></div><div class="pcap">Previewing text before it displays</div></div>
+            </div>
+          </div>
+
+          <div class="ph-panel" data-panel="2" hidden>
+            <div class="ph-panel-lbl">lit up</div>
+            <div class="ph-desc">The finished panel running my drawings and scrolling text, all from software I wrote.</div>
+            <div class="ph-grid">
+              <div class="ph-photo"><div class="pimg"><img src="assets/img/led/lit.jpg" alt="The panel lit up" loading="lazy"></div><div class="pcap">The panel running</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="closing">
+    <div class="closing-top">
+      <div class="cta-eyebrow">get in touch</div>
+      <h2>Let's build something.</h2>
+      <p>If you're building something interesting, robotics, hardware, or otherwise, I'd love to hear about it. A role, a project, or just a hello all work.</p>
+      <div class="closing-links">
+        <a class="primary email-reveal" href="#" data-e="108,115,105,103,110,111,114,105,64,97,110,100,114,101,119,46,99,109,117,46,101,100,117"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> <span class="et">Email me</span></a>
+        <a href="https://linkedin.com/in/lucas-d-signorini/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg> LinkedIn</a>
+        <a href="assets/Lucas_Signorini_Resume.pdf" download class="js-resume"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg> Resume</a>
+      </div>
+    </div>
+    <div class="footer">
+      <span>© 2026 Lucas Signorini · Pittsburgh, PA</span>
+      <a href="index.html">← back to home</a>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
