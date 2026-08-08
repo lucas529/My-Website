@@ -292,6 +292,7 @@
         '<input id="rm-email" type="email" placeholder="So I can reply, if you\'d like" autocomplete="email">' +
         '<label for="rm-note">Note</label>' +
         '<textarea id="rm-note" rows="3" placeholder="e.g. your company or role, a job you\'re hiring for, or just a hello"></textarea>' +
+        '<input type="checkbox" name="botcheck" class="rm-hp" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">' +
         '<div class="rmodal-actions">' +
           '<button class="rmodal-send" type="button">Send</button>' +
           '<button class="rmodal-skip" type="button">No thanks</button>' +
@@ -310,15 +311,45 @@
       if (!w) window.location.href = url;   // fallback if the new tab is blocked
       closeRm();
     });
-    rm.querySelector('.rmodal-send').addEventListener('click', function () {
+    var WEB3FORMS_KEY = 'a6af5347-3c4e-4e61-881d-895aa4da88d7';
+    var card = rm.querySelector('.rmodal-card');
+    var sendBtn = rm.querySelector('.rmodal-send');
+    function showThanks() {
+      card.innerHTML =
+        '<h3>Thanks — got it.</h3>' +
+        '<p>Your note landed in my inbox. I\'ll get back to you if you left an email. Appreciate you stopping by.</p>' +
+        '<div class="rmodal-actions"><button class="rmodal-skip" type="button">Close</button></div>';
+      card.querySelector('.rmodal-skip').addEventListener('click', closeRm);
+    }
+    function showError() {
+      if (sendBtn) { sendBtn.disabled = false; sendBtn.textContent = 'Send'; }
+      var foot = rm.querySelector('.rmodal-foot');
+      if (foot) foot.innerHTML = 'Hmm, that didn\'t go through. You can email me directly at ' +
+        '<a class="rmodal-li" href="mailto:lsignori@andrew.cmu.edu">lsignori@andrew.cmu.edu</a>.';
+    }
+    sendBtn.addEventListener('click', function () {
       var name = (rm.querySelector('#rm-name').value || '').trim();
       var email = (rm.querySelector('#rm-email').value || '').trim();
       var note = (rm.querySelector('#rm-note').value || '').trim();
-      var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + note;
-      window.location.href = 'mailto:lsignori@andrew.cmu.edu' +
-        '?subject=' + encodeURIComponent('Hi Lucas, saw your portfolio') +
-        '&body=' + encodeURIComponent(body);
-      closeRm();
+      if (rm.querySelector('.rm-hp') && rm.querySelector('.rm-hp').checked) { closeRm(); return; }
+      sendBtn.disabled = true;
+      sendBtn.textContent = 'Sending…';
+      var message = note || (name || email ? 'Said hi via the resume popup (no note).' : 'Someone grabbed the resume and said hi.');
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: 'Hi Lucas, saw your portfolio',
+          from_name: name || 'Portfolio visitor',
+          name: name,
+          email: email,
+          message: message
+        })
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (json) { if (json && json.success) { showThanks(); } else { showError(); } })
+      .catch(function () { showError(); });
     });
     resumeLinks.forEach(function (a) {
       a.addEventListener('click', function () {
